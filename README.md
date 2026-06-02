@@ -8,14 +8,14 @@ Plataforma de gerenciamento e descoberta de jogos utilizando a API da RAWG.io co
 
 ## Estrutura da documentação
 
-* [01-funcionalidades-principais.md](./01-funcionalidades-principais.md)
-* [02-tipos-de-usuarios.md](./02-tipos-de-usuarios.md)
-* [03-arquitetura-do-sistema.md](./03-arquitetura-do-sistema.md)
-* [04-entidades-e-relacionamentos.md](./04-entidades-e-relacionamentos.md)
-* [05-endpoints-api.md](./05-endpoints-api.md)
-* [06-tecnologias-sugeridas.md](./06-tecnologias-sugeridas.md)
-* [07-fluxos-principais.md](./07-fluxos-principais.md)
-* [08-prompts-utilizados.md](./08-prompts-utilizados.md)
+* [00. Atividade.md](./atividade.md)
+* [01. Funcionalidades Principais](./01-funcionalidades-principais.md)
+* [02. Tipos de Usuários](./02-tipos-de-usuarios.md)
+* [03. Arquitetura do Sistema](./03-arquitetura-do-sistema.md)
+* [04. Entidades e Relacionamentos](./04-entidades-e-relacionamentos.md)
+* [05. Endpoints da API](./05-endpoints-api.md)
+* [06. Tecnologias Sugeridas](./06-tecnologias-sugeridas.md)
+* [07. Fluxos Principais](./07-fluxos-principais.md)
 
 ---
 
