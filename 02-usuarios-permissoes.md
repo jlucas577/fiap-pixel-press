@@ -2,31 +2,29 @@
 
 ## Prompt
 
-```
-Você é um arquiteto de software trabalhando na Phase B (Business Architecture) do TOGAF ADM.
-
-Contexto:
-- Domínio: app web de descoberta e tracking de video games (estilo Letterboxd para jogos).
-- Catálogo vem da RAWG Video Games Database API; dados do usuário (biblioteca, reviews, listas, follows) ficam em backend próprio.
-- As funcionalidades core já definidas: busca de jogos, página de detalhes, biblioteca pessoal com status, avaliação/review, listas customizadas, recomendações, feed de lançamentos, perfil público com estatísticas, social (follow + atividade) e wishlist com alertas.
-- Modelo de autorização desejado: RBAC (Role-Based Access Control), com papéis mutuamente compostos e permissões granulares por recurso.
-
-Tarefa:
-Defina os tipos de usuários (papéis/roles) do sistema e suas permissões.
-1. Liste os papéis (sugestão: Visitante, Usuário registrado, Moderador, Administrador). Para cada um, escreva 1 frase descrevendo quem é e seu objetivo no sistema.
-2. Produza uma matriz de permissões: linhas = recursos/ações principais (ex: buscar jogos, ver detalhes, gerenciar própria biblioteca, criar review, moderar conteúdo reportado, gerenciar usuários, configurar integração RAWG); colunas = papéis. Use ✅ (permitido), ❌ (negado) e, quando aplicável, "próprio" (só sobre recursos do próprio usuário).
-3. Liste de 3 a 5 regras de negócio de autorização relevantes (ex: ownership de conteúdo, visibilidade de listas privadas, escalada de papéis, soft-delete por moderador).
-
-Restrições:
-- Papéis devem ser hierárquicos/cumulativos quando fizer sentido (Admin herda capacidades de Moderador, que herda de Usuário registrado).
-- Não invente integrações externas além da RAWG API.
-- Toda ação de escrita exige usuário autenticado; Visitante é estritamente read-only do conteúdo público.
-
-Formato de saída:
-- Seção "Papéis": lista Markdown `- **Papel**: descrição`.
-- Seção "Matriz de permissões": tabela Markdown.
-- Seção "Regras de negócio de autorização": lista numerada.
-```
+> Você é um arquiteto de software trabalhando na Phase B (Business Architecture) do TOGAF ADM.  
+>
+> Contexto:  
+> - Domínio: app web de descoberta e tracking de video games (estilo Letterboxd para jogos).  
+> - Catálogo vem da RAWG Video Games Database API; dados do usuário (biblioteca, reviews, listas, follows) ficam em backend próprio.  
+> - As funcionalidades core já definidas: busca de jogos, página de detalhes, biblioteca pessoal com status, avaliação/review, listas customizadas, recomendações, feed de lançamentos, perfil público com estatísticas, social (follow + atividade) e wishlist com alertas.  
+> - Modelo de autorização desejado: RBAC (Role-Based Access Control), com papéis mutuamente compostos e permissões granulares por recurso.  
+>
+> Tarefa:  
+> Defina os tipos de usuários (papéis/roles) do sistema e suas permissões.  
+> 1. Liste os papéis (sugestão: Visitante, Usuário registrado, Moderador, Administrador). Para cada um, escreva 1 frase descrevendo quem é e seu objetivo no sistema.  
+> 2. Produza uma matriz de permissões: linhas = recursos/ações principais (ex: buscar jogos, ver detalhes, gerenciar própria biblioteca, criar review, moderar conteúdo reportado, gerenciar usuários, configurar integração RAWG); colunas = papéis. Use ✅ (permitido), ❌ (negado) e, quando aplicável, "próprio" (só sobre recursos do próprio usuário).  
+> 3. Liste de 3 a 5 regras de negócio de autorização relevantes (ex: ownership de conteúdo, visibilidade de listas privadas, escalada de papéis, soft-delete por moderador).  
+>
+> Restrições:  
+> - Papéis devem ser hierárquicos/cumulativos quando fizer sentido (Admin herda capacidades de Moderador, que herda de Usuário registrado).  
+> - Não invente integrações externas além da RAWG API.  
+> - Toda ação de escrita exige usuário autenticado; Visitante é estritamente read-only do conteúdo público.  
+>
+> Formato de saída:  
+> - Seção "Papéis": lista Markdown `- **Papel**: descrição`.  
+> - Seção "Matriz de permissões": tabela Markdown.  
+> - Seção "Regras de negócio de autorização": lista numerada.  
 
 ## Output (rascunho, validar e refinar com a ferramenta)
 

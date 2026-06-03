@@ -2,37 +2,35 @@
 
 ## Prompt
 
-```
-Você é um arquiteto de software / modelador de dados trabalhando na Phase C (Data Architecture) do TOGAF ADM.
-
-Contexto:
-- Domínio: app web de descoberta e tracking de video games (estilo Letterboxd para jogos).
-- Catálogo vem da RAWG API (read-only, cacheado); dados do usuário ficam em banco relacional próprio.
-- Features core (itens 1-3): biblioteca pessoal com status, reviews com nota, listas customizadas, follow social, wishlist com alertas, perfil com estatísticas.
-- Papéis RBAC (item 2): Visitante, Usuário registrado, Moderador, Administrador.
-
-Decisão de modelagem importante:
-O catálogo da RAWG NÃO é replicado por completo no banco. Para cada jogo referenciado pelo usuário (na biblioteca, review, lista ou wishlist), guardamos apenas um registro "Jogo" mínimo (rawg_id + nome + slug + capa cacheados), que funciona como referência local ao catálogo externo. Os detalhes ricos vêm da RAWG sob demanda.
-
-Tarefa:
-Defina as entidades principais do banco relacional e seus relacionamentos.
-1. Liste cada entidade com seus atributos principais (incluindo PK, FKs e campos relevantes). Não precisa listar todos os campos de auditoria, mas inclua os que importam para regra de negócio.
-2. Indique a cardinalidade de cada relacionamento (1:1, 1:N, N:N) e quais precisam de tabela associativa.
-3. Gere um diagrama ER em Mermaid (erDiagram) com as entidades e relacionamentos.
-
-Entidades esperadas (no mínimo): Usuario, Papel/Role, Jogo (referência ao catálogo RAWG), ItemBiblioteca (com status), Review, Lista, ItemLista, Follow, ItemWishlist.
-
-Restrições:
-- Banco relacional, integridade referencial via FKs.
-- "Jogo" é referência ao catálogo externo, não cópia completa.
-- Relacionamentos N:N (ex: Lista x Jogo, Usuario x Usuario follow) modelados com tabela associativa.
-- Status de biblioteca como enum/valor controlado (jogando, zerado, quero jogar, dropei, platinado).
-
-Formato de saída:
-- Seção "Entidades": para cada entidade, nome + lista de atributos com tipo e marcação de PK/FK.
-- Seção "Relacionamentos": lista com cardinalidades.
-- Seção "Diagrama ER": bloco Mermaid erDiagram válido.
-```
+> Você é um arquiteto de software / modelador de dados trabalhando na Phase C (Data Architecture) do TOGAF ADM.  
+>
+> Contexto:  
+> - Domínio: app web de descoberta e tracking de video games (estilo Letterboxd para jogos).  
+> - Catálogo vem da RAWG API (read-only, cacheado); dados do usuário ficam em banco relacional próprio.  
+> - Features core (itens 1-3): biblioteca pessoal com status, reviews com nota, listas customizadas, follow social, wishlist com alertas, perfil com estatísticas.  
+> - Papéis RBAC (item 2): Visitante, Usuário registrado, Moderador, Administrador.  
+>
+> Decisão de modelagem importante:  
+> O catálogo da RAWG NÃO é replicado por completo no banco. Para cada jogo referenciado pelo usuário (na biblioteca, review, lista ou wishlist), guardamos apenas um registro "Jogo" mínimo (rawg_id + nome + slug + capa cacheados), que funciona como referência local ao catálogo externo. Os detalhes ricos vêm da RAWG sob demanda.  
+>
+> Tarefa:  
+> Defina as entidades principais do banco relacional e seus relacionamentos.  
+> 1. Liste cada entidade com seus atributos principais (incluindo PK, FKs e campos relevantes). Não precisa listar todos os campos de auditoria, mas inclua os que importam para regra de negócio.  
+> 2. Indique a cardinalidade de cada relacionamento (1:1, 1:N, N:N) e quais precisam de tabela associativa.  
+> 3. Gere um diagrama ER em Mermaid (erDiagram) com as entidades e relacionamentos.  
+>
+> Entidades esperadas (no mínimo): Usuario, Papel/Role, Jogo (referência ao catálogo RAWG), ItemBiblioteca (com status), Review, Lista, ItemLista, Follow, ItemWishlist.  
+>
+> Restrições:  
+> - Banco relacional, integridade referencial via FKs.  
+> - "Jogo" é referência ao catálogo externo, não cópia completa.  
+> - Relacionamentos N:N (ex: Lista x Jogo, Usuario x Usuario follow) modelados com tabela associativa.  
+> - Status de biblioteca como enum/valor controlado (jogando, zerado, quero jogar, dropei, platinado).  
+>
+> Formato de saída:  
+> - Seção "Entidades": para cada entidade, nome + lista de atributos com tipo e marcação de PK/FK.  
+> - Seção "Relacionamentos": lista com cardinalidades.  
+> - Seção "Diagrama ER": bloco Mermaid erDiagram válido.  
 
 ## Output (rascunho, validar e refinar com a ferramenta)
 

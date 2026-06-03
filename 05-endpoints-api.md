@@ -2,32 +2,30 @@
 
 ## Prompt
 
-```
-Você é um arquiteto de software trabalhando na Phase C (Application Architecture) do TOGAF ADM.
-
-Contexto:
-- Domínio: app web de descoberta e tracking de video games (estilo Letterboxd para jogos).
-- Backend: API REST stateless, autenticação via JWT, autorização RBAC (Visitante, Usuario, Moderador, Admin).
-- Catálogo vem da RAWG API (cacheada no backend); dados do usuário no banco relacional.
-- Entidades (item 4): Usuario, Papel, Jogo, ItemBiblioteca, Review, Lista, ItemLista, Follow, ItemWishlist.
-
-Tarefa:
-Defina as principais rotas REST da API, agrupadas por recurso.
-1. Para cada endpoint, especifique: método HTTP, path, descrição em 1 frase, e papel mínimo exigido (público / usuario / moderador / admin).
-2. Use convenções REST: substantivos no plural, sub-recursos aninhados quando fizer sentido, verbos só em ações que não mapeiam para CRUD.
-3. Inclua paginação/filtros nas rotas de listagem (query params) e indique quais ações exigem ownership (só o dono do recurso).
-4. Cubra: autenticação, catálogo de jogos (proxy RAWG), biblioteca, reviews, listas, social (follow/feed), wishlist, perfil/estatísticas e moderação.
-
-Restrições:
-- Seguir REST/HTTP semântico (GET idempotente, POST cria, PUT/PATCH atualiza, DELETE remove).
-- Endpoints de catálogo (jogos) são proxy read-only da RAWG, sem escrita.
-- Toda escrita exige JWT; ownership validado no backend (403 se não for dono e não for moderador/admin).
-- Versionar a API sob /api/v1.
-
-Formato de saída:
-- Tabelas Markdown agrupadas por recurso, colunas: Método | Path | Descrição | Papel mínimo.
-- Seção final "Convenções" com regras de paginação, formato de erro e auth header.
-```
+> Você é um arquiteto de software trabalhando na Phase C (Application Architecture) do TOGAF ADM.  
+>
+> Contexto:  
+> - Domínio: app web de descoberta e tracking de video games (estilo Letterboxd para jogos).  
+> - Backend: API REST stateless, autenticação via JWT, autorização RBAC (Visitante, Usuario, Moderador, Admin).  
+> - Catálogo vem da RAWG API (cacheada no backend); dados do usuário no banco relacional.  
+> - Entidades (item 4): Usuario, Papel, Jogo, ItemBiblioteca, Review, Lista, ItemLista, Follow, ItemWishlist.  
+>
+> Tarefa:  
+> Defina as principais rotas REST da API, agrupadas por recurso.  
+> 1. Para cada endpoint, especifique: método HTTP, path, descrição em 1 frase, e papel mínimo exigido (público / usuario / moderador / admin).  
+> 2. Use convenções REST: substantivos no plural, sub-recursos aninhados quando fizer sentido, verbos só em ações que não mapeiam para CRUD.  
+> 3. Inclua paginação/filtros nas rotas de listagem (query params) e indique quais ações exigem ownership (só o dono do recurso).  
+> 4. Cubra: autenticação, catálogo de jogos (proxy RAWG), biblioteca, reviews, listas, social (follow/feed), wishlist, perfil/estatísticas e moderação.  
+>
+> Restrições:  
+> - Seguir REST/HTTP semântico (GET idempotente, POST cria, PUT/PATCH atualiza, DELETE remove).  
+> - Endpoints de catálogo (jogos) são proxy read-only da RAWG, sem escrita.  
+> - Toda escrita exige JWT; ownership validado no backend (403 se não for dono e não for moderador/admin).  
+> - Versionar a API sob /api/v1.  
+>
+> Formato de saída:  
+> - Tabelas Markdown agrupadas por recurso, colunas: Método | Path | Descrição | Papel mínimo.  
+> - Seção final "Convenções" com regras de paginação, formato de erro e auth header.  
 
 ## Output (rascunho, validar e refinar com a ferramenta)
 

@@ -2,22 +2,20 @@
 
 ## Prompt
 
-```
-Você é um arquiteto de software trabalhando na Phase A/B do TOGAF ADM.
-
-Contexto:
-- Domínio: app web de descoberta e tracking de video games (estilo Letterboxd para jogos).
-- Fonte de catálogo: RAWG Video Games Database API (https://rawg.io/apidocs).
-- Público: jogadores casuais e hardcore que querem catalogar, avaliar e descobrir jogos.
-
-Tarefa:
-Liste cerca de 10 funcionalidades principais (features core) do sistema.
-Para cada uma, escreva 1 frase curta explicando o que a feature faz e o valor que entrega ao usuário.
-Foque em features viáveis de implementar consumindo a RAWG API + um backend próprio para dados do usuário.
-Não inclua features de infraestrutura (login, cadastro, etc.) na lista principal, trate isso como pré-requisito.
-
-Formato de saída: lista Markdown, cada item no formato `- **Nome da feature**: descrição em 1 frase`.
-```
+> Você é um arquiteto de software trabalhando na Phase A/B do TOGAF ADM.  
+>
+> Contexto:  
+> - Domínio: app web de descoberta e tracking de video games (estilo Letterboxd para jogos).  
+> - Fonte de catálogo: RAWG Video Games Database API (https://rawg.io/apidocs).  
+> - Público: jogadores casuais e hardcore que querem catalogar, avaliar e descobrir jogos.  
+>
+> Tarefa:  
+> Liste cerca de 10 funcionalidades principais (features core) do sistema.  
+> Para cada uma, escreva 1 frase curta explicando o que a feature faz e o valor que entrega ao usuário.  
+> Foque em features viáveis de implementar consumindo a RAWG API + um backend próprio para dados do usuário.  
+> Não inclua features de infraestrutura (login, cadastro, etc.) na lista principal, trate isso como pré-requisito.  
+>
+> Formato de saída: lista Markdown, cada item no formato `- **Nome da feature**: descrição em 1 frase`.  
 
 ## Output (rascunho, validar e refinar com a ferramenta)
 

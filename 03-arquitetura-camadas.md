@@ -2,36 +2,34 @@
 
 ## Prompt
 
-```
-Você é um arquiteto de software trabalhando na Phase C/D (Information Systems & Technology Architecture) do TOGAF ADM.
-
-Contexto:
-- Domínio: app web de descoberta e tracking de video games (estilo Letterboxd para jogos).
-- Catálogo vem da RAWG Video Games Database API (integração externa read-only, com chave de API).
-- Dados do usuário (biblioteca, reviews, listas, follows, wishlist) ficam em backend próprio com banco relacional.
-- Features core e papéis (RBAC) já definidos nos itens 1 e 2.
-- Estilo arquitetural desejado: aplicação web em camadas (3-tier), API REST stateless com autenticação via JWT, cache para reduzir chamadas à RAWG.
-
-Tarefa:
-Produza o diagrama de arquitetura em camadas do sistema, cobrindo no mínimo: frontend, backend e banco de dados, além de integrações externas e componentes de apoio (cache, autenticação).
-1. Descreva textualmente cada camada e seus principais componentes/responsabilidades.
-2. Gere um diagrama em Mermaid (graph TD ou flowchart) mostrando o fluxo entre as camadas, incluindo:
-   - Camada de apresentação (SPA frontend).
-   - Camada de aplicação/backend (API REST, serviços de domínio, camada de integração RAWG, autenticação/autorização).
-   - Camada de dados (banco relacional + cache).
-   - Integração externa (RAWG API).
-3. Indique onde entram cache, autenticação (JWT) e a fronteira do que é proxy/sync da RAWG vs. dado proprietário.
-
-Restrições:
-- Não inventar integrações externas além da RAWG API.
-- Manter separação clara de responsabilidades entre camadas (frontend não acessa banco diretamente).
-- Backend é a única camada que fala com a RAWG e com o banco.
-
-Formato de saída:
-- Seção "Camadas": lista Markdown descrevendo cada camada e componentes.
-- Seção "Diagrama": bloco de código Mermaid válido.
-- Seção "Decisões de arquitetura": 3 a 5 bullets justificando escolhas (cache, statelessness, separação de camadas).
-```
+> Você é um arquiteto de software trabalhando na Phase C/D (Information Systems & Technology Architecture) do TOGAF ADM.  
+>
+> Contexto:  
+> - Domínio: app web de descoberta e tracking de video games (estilo Letterboxd para jogos).  
+> - Catálogo vem da RAWG Video Games Database API (integração externa read-only, com chave de API).  
+> - Dados do usuário (biblioteca, reviews, listas, follows, wishlist) ficam em backend próprio com banco relacional.  
+> - Features core e papéis (RBAC) já definidos nos itens 1 e 2.  
+> - Estilo arquitetural desejado: aplicação web em camadas (3-tier), API REST stateless com autenticação via JWT, cache para reduzir chamadas à RAWG.  
+>
+> Tarefa:  
+> Produza o diagrama de arquitetura em camadas do sistema, cobrindo no mínimo: frontend, backend e banco de dados, além de integrações externas e componentes de apoio (cache, autenticação).  
+> 1. Descreva textualmente cada camada e seus principais componentes/responsabilidades.  
+> 2. Gere um diagrama em Mermaid (graph TD ou flowchart) mostrando o fluxo entre as camadas, incluindo:  
+>    - Camada de apresentação (SPA frontend).  
+>    - Camada de aplicação/backend (API REST, serviços de domínio, camada de integração RAWG, autenticação/autorização).  
+>    - Camada de dados (banco relacional + cache).  
+>    - Integração externa (RAWG API).  
+> 3. Indique onde entram cache, autenticação (JWT) e a fronteira do que é proxy/sync da RAWG vs. dado proprietário.  
+>
+> Restrições:  
+> - Não inventar integrações externas além da RAWG API.  
+> - Manter separação clara de responsabilidades entre camadas (frontend não acessa banco diretamente).  
+> - Backend é a única camada que fala com a RAWG e com o banco.  
+>
+> Formato de saída:  
+> - Seção "Camadas": lista Markdown descrevendo cada camada e componentes.  
+> - Seção "Diagrama": bloco de código Mermaid válido.  
+> - Seção "Decisões de arquitetura": 3 a 5 bullets justificando escolhas (cache, statelessness, separação de camadas).  
 
 ## Output (rascunho, validar e refinar com a ferramenta)
 

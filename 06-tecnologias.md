@@ -2,30 +2,28 @@
 
 ## Prompt
 
-```
-Você é um arquiteto de software trabalhando na Phase D (Technology Architecture) do TOGAF ADM.
-
-Contexto:
-- Domínio: app web de descoberta e tracking de video games (estilo Letterboxd para jogos).
-- Arquitetura (item 3): 3-tier — SPA frontend, API REST stateless backend, banco relacional + cache, integração read-only com a RAWG API.
-- Autenticação JWT, autorização RBAC; entidades e endpoints já definidos (itens 4-5).
-- Perfil do time: desenvolvedores full-stack; prioridade em produtividade, ecossistema maduro e baixo custo de operação para um MVP acadêmico que pode evoluir para produção.
-
-Tarefa:
-Sugira a stack de tecnologias, organizada por camada/responsabilidade.
-1. Para cada camada (frontend, backend, banco de dados, cache, autenticação, integração externa, infraestrutura/deploy, observabilidade), indique a tecnologia recomendada e 1 frase justificando a escolha.
-2. Quando fizer sentido, ofereça uma alternativa equivalente (ex: "PostgreSQL ou MySQL").
-3. Liste as decisões transversais: linguagem principal, gerenciamento de dependências, testes, CI/CD e containerização.
-
-Restrições:
-- Pode ser genérico onde não importa ("banco relacional"), mas seja específico onde a escolha tem impacto arquitetural (ex: cache, ORM, estratégia de auth).
-- Não introduzir tecnologias que exijam integrações externas além da RAWG API.
-- Justificar escolhas com base em produtividade, maturidade do ecossistema e adequação ao domínio, não modismo.
-
-Formato de saída:
-- Tabela Markdown: Camada | Tecnologia recomendada | Alternativa | Justificativa.
-- Seção "Decisões transversais": bullets.
-```
+> Você é um arquiteto de software trabalhando na Phase D (Technology Architecture) do TOGAF ADM.  
+>
+> Contexto:  
+> - Domínio: app web de descoberta e tracking de video games (estilo Letterboxd para jogos).  
+> - Arquitetura (item 3): 3-tier — SPA frontend, API REST stateless backend, banco relacional + cache, integração read-only com a RAWG API.  
+> - Autenticação JWT, autorização RBAC; entidades e endpoints já definidos (itens 4-5).  
+> - Perfil do time: desenvolvedores full-stack; prioridade em produtividade, ecossistema maduro e baixo custo de operação para um MVP acadêmico que pode evoluir para produção.  
+>
+> Tarefa:  
+> Sugira a stack de tecnologias, organizada por camada/responsabilidade.  
+> 1. Para cada camada (frontend, backend, banco de dados, cache, autenticação, integração externa, infraestrutura/deploy, observabilidade), indique a tecnologia recomendada e 1 frase justificando a escolha.  
+> 2. Quando fizer sentido, ofereça uma alternativa equivalente (ex: "PostgreSQL ou MySQL").  
+> 3. Liste as decisões transversais: linguagem principal, gerenciamento de dependências, testes, CI/CD e containerização.  
+>
+> Restrições:  
+> - Pode ser genérico onde não importa ("banco relacional"), mas seja específico onde a escolha tem impacto arquitetural (ex: cache, ORM, estratégia de auth).  
+> - Não introduzir tecnologias que exijam integrações externas além da RAWG API.  
+> - Justificar escolhas com base em produtividade, maturidade do ecossistema e adequação ao domínio, não modismo.  
+>
+> Formato de saída:  
+> - Tabela Markdown: Camada | Tecnologia recomendada | Alternativa | Justificativa.  
+> - Seção "Decisões transversais": bullets.  
 
 ## Output (rascunho, validar e refinar com a ferramenta)
 

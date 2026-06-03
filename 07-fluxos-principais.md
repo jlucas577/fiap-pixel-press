@@ -2,35 +2,33 @@
 
 ## Prompt
 
-```
-Você é um arquiteto de software trabalhando na Phase B/C do TOGAF ADM, detalhando fluxos de processo do sistema.
-
-Contexto:
-- Domínio: app web de descoberta e tracking de video games (estilo Letterboxd para jogos).
-- Arquitetura (itens 3-6): SPA frontend, API REST stateless (JWT + RBAC), banco relacional, cache Redis, integração read-only com a RAWG API (cache-aside).
-- Entidades e endpoints já definidos (itens 4-5).
-
-Tarefa:
-Descreva os fluxos principais do sistema, combinando descrição textual e diagramas de sequência em Mermaid.
-Cubra no mínimo os fluxos:
-1. Autenticação (login retornando JWT).
-2. Busca/visualização de jogo com cache-aside da RAWG (cache hit e cache miss).
-3. Adicionar jogo à biblioteca com status (escrita autenticada + ownership).
-4. Criar review (com validação de papel e regra "uma review por jogo por usuário").
-5. Moderação de conteúdo reportado (denúncia → fila → soft-delete por moderador).
-
-Para cada fluxo:
-- Escreva um parágrafo curto descrevendo o passo a passo e as regras de negócio envolvidas.
-- Gere um diagrama Mermaid (sequenceDiagram) com os atores/participantes corretos (Usuário/SPA, API, Auth, Cache, Banco, RAWG).
-
-Restrições:
-- Refletir a separação de camadas: SPA fala só com a API; só o backend acessa banco, cache e RAWG.
-- Mostrar onde JWT é validado e onde ownership/papel é checado.
-- No fluxo de catálogo, mostrar explicitamente cache hit vs. cache miss.
-
-Formato de saída:
-- Para cada fluxo: subtítulo, parágrafo descritivo e bloco Mermaid sequenceDiagram válido.
-```
+> Você é um arquiteto de software trabalhando na Phase B/C do TOGAF ADM, detalhando fluxos de processo do sistema.  
+>
+> Contexto:  
+> - Domínio: app web de descoberta e tracking de video games (estilo Letterboxd para jogos).  
+> - Arquitetura (itens 3-6): SPA frontend, API REST stateless (JWT + RBAC), banco relacional, cache Redis, integração read-only com a RAWG API (cache-aside).  
+> - Entidades e endpoints já definidos (itens 4-5).  
+>
+> Tarefa:  
+> Descreva os fluxos principais do sistema, combinando descrição textual e diagramas de sequência em Mermaid.  
+> Cubra no mínimo os fluxos:  
+> 1. Autenticação (login retornando JWT).  
+> 2. Busca/visualização de jogo com cache-aside da RAWG (cache hit e cache miss).  
+> 3. Adicionar jogo à biblioteca com status (escrita autenticada + ownership).  
+> 4. Criar review (com validação de papel e regra "uma review por jogo por usuário").  
+> 5. Moderação de conteúdo reportado (denúncia → fila → soft-delete por moderador).  
+>
+> Para cada fluxo:  
+> - Escreva um parágrafo curto descrevendo o passo a passo e as regras de negócio envolvidas.  
+> - Gere um diagrama Mermaid (sequenceDiagram) com os atores/participantes corretos (Usuário/SPA, API, Auth, Cache, Banco, RAWG).  
+>
+> Restrições:  
+> - Refletir a separação de camadas: SPA fala só com a API; só o backend acessa banco, cache e RAWG.  
+> - Mostrar onde JWT é validado e onde ownership/papel é checado.  
+> - No fluxo de catálogo, mostrar explicitamente cache hit vs. cache miss.  
+>
+> Formato de saída:  
+> - Para cada fluxo: subtítulo, parágrafo descritivo e bloco Mermaid sequenceDiagram válido.  
 
 ## Output (rascunho, validar e refinar com a ferramenta)
 
