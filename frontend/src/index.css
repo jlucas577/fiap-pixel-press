@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  * {
+    border-color: theme('colors.line');
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-ink text-fg font-sans antialiased;
+    font-feature-settings: 'ss01', 'cv01';
+    /* Atmosfera: glow radial superior + grade sutil + grão */
+    background-image:
+      radial-gradient(900px 480px at 85% -8%, rgba(205, 250, 80, 0.08), transparent 60%),
+      radial-gradient(700px 500px at 8% 0%, rgba(90, 209, 255, 0.05), transparent 55%),
+      linear-gradient(theme('colors.line') 1px, transparent 1px),
+      linear-gradient(90deg, theme('colors.line') 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 44px 44px, 44px 44px;
+    background-position: 0 0, 0 0, -1px -1px, -1px -1px;
+    background-attachment: fixed;
+  }
+
+  /* Grão/scanline global, não-interativo */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.04;
+    background-image: repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.7) 0px,
+      rgba(255, 255, 255, 0.7) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+    mix-blend-mode: overlay;
+  }
+
+  ::selection {
+    background: theme('colors.accent');
+    color: theme('colors.accent-ink');
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 11px;
+    height: 11px;
+  }
+  ::-webkit-scrollbar-track {
+    background: theme('colors.ink');
+  }
+  ::-webkit-scrollbar-thumb {
+    background: theme('colors.surface-3');
+    border-radius: 99px;
+    border: 2px solid theme('colors.ink');
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: theme('colors.line');
+  }
+}
+
+@layer components {
+  .label-mono {
+    @apply font-mono text-[10px] uppercase tracking-[0.22em] text-muted;
+  }
+
+  .surface-card {
+    @apply rounded-xl border border-line bg-surface/80 backdrop-blur-sm;
+  }
+
+  .focus-ring {
+    @apply outline-none focus-visible:ring-2 focus-visible:ring-accent/70 focus-visible:ring-offset-2 focus-visible:ring-offset-ink;
+  }
+
+  /* Linha decorativa de canto para cards "arcade" */
+  .corner-tick {
+    position: relative;
+  }
+  .corner-tick::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 9px;
+    height: 9px;
+    border-top: 1.5px solid theme('colors.accent');
+    border-left: 1.5px solid theme('colors.accent');
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+  .corner-tick:hover::before {
+    opacity: 0.8;
+  }
+}
+
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background: theme('colors.surface-2');
+}
+.skeleton::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.05),
+    transparent
+  );
+  animation: shimmer 1.5s infinite;
+}
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
