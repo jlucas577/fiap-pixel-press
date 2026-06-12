@@ -36,6 +36,8 @@ export function ReviewCard({
 
   return (
     <article
+      data-testid={`review-${review.id}`}
+      data-oculto={review.oculto ? 'true' : 'false'}
       className={cn(
         'surface-card animate-fade-up p-5',
         review.oculto && 'border-danger/30 opacity-70',

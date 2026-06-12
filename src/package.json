@@ -11,7 +11,10 @@
     "build:web": "pnpm --filter pixelpress-frontend build",
     "build": "pnpm -r build",
     "db:reset": "pnpm --filter pixelpress-backend db:reset",
-    "db:seed": "pnpm --filter pixelpress-backend db:seed"
+    "db:seed": "pnpm --filter pixelpress-backend db:seed",
+    "test:e2e:api": "pnpm --filter pixelpress-backend test:e2e",
+    "test:e2e:ui": "pnpm --filter pixelpress-frontend test:e2e:ui",
+    "test:all": "pnpm --filter pixelpress-backend test:e2e && pnpm --filter pixelpress-frontend test:e2e:ui"
   },
   "pnpm": {
     "onlyBuiltDependencies": ["@prisma/client", "@prisma/engines", "prisma", "bcrypt", "@nestjs/core", "@scarf/scarf", "esbuild"]

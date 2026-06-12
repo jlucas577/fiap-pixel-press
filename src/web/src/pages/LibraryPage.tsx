@@ -62,6 +62,7 @@ export function LibraryPage() {
             {data.results.map((item) => (
               <div
                 key={item.id}
+                data-testid={`bib-item-${item.jogo.slug}`}
                 className="surface-card flex items-center gap-4 p-3 transition-colors hover:border-line/80"
               >
                 <Link to={`/jogo/${item.jogo.slug}`} className="shrink-0">
