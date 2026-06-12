@@ -5,6 +5,7 @@
   "description": "PixelPress monorepo — api (NestJS) + web (React/Vite)",
   "packageManager": "pnpm@10.8.1",
   "scripts": {
+    "dev": "concurrently -k -n api,web -c blue,green \"pnpm dev:api\" \"pnpm dev:web\"",
     "dev:api": "pnpm --filter pixelpress-backend start:dev",
     "dev:web": "pnpm --filter pixelpress-frontend dev",
     "build:api": "pnpm --filter pixelpress-backend build",
@@ -17,6 +18,17 @@
     "test:all": "pnpm --filter pixelpress-backend test:e2e && pnpm --filter pixelpress-frontend test:e2e:ui"
   },
   "pnpm": {
-    "onlyBuiltDependencies": ["@prisma/client", "@prisma/engines", "prisma", "bcrypt", "@nestjs/core", "@scarf/scarf", "esbuild"]
+    "onlyBuiltDependencies": [
+      "@prisma/client",
+      "@prisma/engines",
+      "prisma",
+      "bcrypt",
+      "@nestjs/core",
+      "@scarf/scarf",
+      "esbuild"
+    ]
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.3"
   }
 }
