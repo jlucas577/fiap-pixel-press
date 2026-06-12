@@ -1,6 +1,7 @@
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { AppShell } from './components/AppShell';
 import { RequireAuth, RequireRole } from './auth/guards';
+import { LandingPage } from './pages/LandingPage';
 import { LoginPage } from './pages/LoginPage';
 import { CatalogPage } from './pages/CatalogPage';
 import { GameDetailPage } from './pages/GameDetailPage';
@@ -12,12 +13,12 @@ import { NotFoundPage } from './pages/NotFoundPage';
 export function App() {
   return (
     <Routes>
+      <Route path="/" element={<LandingPage />} />
       <Route path="/login" element={<LoginPage />} />
 
       {/* Tudo abaixo exige sessão (guarda de rota privada). */}
       <Route element={<RequireAuth />}>
         <Route element={<AppShell />}>
-          <Route index element={<Navigate to="/catalogo" replace />} />
           <Route path="/catalogo" element={<CatalogPage />} />
           <Route path="/jogo/:slug" element={<GameDetailPage />} />
           <Route path="/biblioteca" element={<LibraryPage />} />

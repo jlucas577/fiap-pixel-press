@@ -22,6 +22,7 @@ export default {
       },
       fontFamily: {
         display: ['"Chakra Petch"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        grotesk: ['"Space Grotesk"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         sans: ['Sora', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         mono: ['"Space Mono"', 'ui-monospace', 'monospace'],
       },
