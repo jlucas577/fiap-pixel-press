@@ -29,11 +29,11 @@ services:
     # both build and start commands.
     rootDir: src
 
-    # Build: provision pnpm via corepack (Render's global npm dir is read-only,
-    # so `npm install -g pnpm` fails with EROFS), install workspace deps,
-    # generate Prisma client, compile NestJS.
+    # Build: provision pnpm via corepack. Render's /usr dirs are read-only, so
+    # neither `npm install -g pnpm` nor `corepack enable` work (both EROFS). The
+    # pnpm shim already exists at /usr/bin/pnpm; `corepack prepare --activate`
+    # only writes to the writable corepack cache, so the shim then runs 10.8.1.
     buildCommand: >-
-      corepack enable &&
       corepack prepare pnpm@10.8.1 --activate &&
       pnpm install --frozen-lockfile &&
       pnpm --filter pixelpress-backend exec prisma generate &&
@@ -56,6 +56,10 @@ services:
 
       - key: NODE_ENV
         value: production
+
+      # Let corepack download the pinned pnpm without an interactive prompt.
+      - key: COREPACK_ENABLE_DOWNLOAD_PROMPT
+        value: "0"
 
       # JWT_SECRET — set in Render Dashboard (sync: false = never committed).
       - key: JWT_SECRET
@@ -97,11 +101,11 @@ services:
     # correctly; the --filter targets the web package by its package.json name.
     rootDir: src
 
-    # Build: provision pnpm via corepack (read-only global dir → no `npm i -g`),
-    # install workspace deps, Vite build (tsc + vite build per package.json scripts).
+    # Build: provision pnpm via corepack (read-only /usr → no `npm i -g`, no
+    # `corepack enable`; the /usr/bin/pnpm shim already exists). prepare --activate
+    # only writes the writable cache. Then install workspace deps + Vite build.
     # VITE_API_BASE_URL is baked at build time — must be set before this runs.
     buildCommand: >-
-      corepack enable &&
       corepack prepare pnpm@10.8.1 --activate &&
       pnpm install --frozen-lockfile &&
       pnpm --filter pixelpress-frontend run build
@@ -116,6 +120,10 @@ services:
         destination: /index.html
 
     envVars:
+      # Let corepack download the pinned pnpm without an interactive prompt.
+      - key: COREPACK_ENABLE_DOWNLOAD_PROMPT
+        value: "0"
+
       # Vite bakes this at BUILD time. Points to the Render API service URL.
       # NOTE: If you rename the API service, update this value and redeploy the frontend.
       - key: VITE_API_BASE_URL
