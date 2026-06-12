@@ -9,7 +9,13 @@ dist-ssr/
 
 # env
 .env
+.env.test
 *.local
+
+# Playwright
+test-results/
+playwright-report/
+.playwright/
 
 # SQLite (efêmero, recriado via db:reset / boot)
 *.db
