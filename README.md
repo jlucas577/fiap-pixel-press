@@ -48,7 +48,9 @@ cp api/.env.example api/.env   # preencha RAWG_API_KEY (DATABASE_URL já vem def
 pnpm install                   # instala api + web (um único lockfile)
 pnpm db:reset                  # cria api/prisma/dev.db, aplica o schema e roda o seed
 
-# em dois terminais (ou use o & no fim):
+pnpm dev                       # sobe API + SPA juntos (concurrently) → :3000 e :5173
+
+# ou, separadamente, em dois terminais:
 pnpm dev:api                   # sobe a API   → http://localhost:3000
 pnpm dev:web                   # sobe a SPA   → http://localhost:5173
 ```
