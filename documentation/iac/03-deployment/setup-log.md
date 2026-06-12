@@ -40,10 +40,51 @@
 
 ---
 
-### Next entry: after first successful Render deploy
+### 2026-06-11 — Live Deploy to Render (4 build iterations)
 
-Record:
-- Render service IDs (from Dashboard > Service > Settings)
-- Actual API cold start time observed
-- Seed data verification result
-- Any build errors encountered and resolutions
+**What:** Granted Render's GitHub App access to `caio-swdev/fiap-pixel-press`.
+**Why:** Render needs repo read + webhook access to build on push and pull `render.yaml`.
+**Result:** Access granted (one-time browser OAuth step).
+
+---
+
+**What:** Connected Blueprint via Render Dashboard (New > Blueprint).
+**Why:** First Blueprint connection is dashboard-only — no CLI/API path exists for initial connect.
+**Result:** Blueprint `pixelpress` created in workspace "My Workspace". Repo `caio-swdev/fiap-pixel-press`, branch `atividade-2`, auto-deploy on push ON. Secrets `JWT_SECRET` and `RAWG_API_KEY` set in dashboard (sync:false).
+
+---
+
+**What:** Build iteration 1 — static site `region` rejected.
+**Why:** render.yaml set `region: oregon` on the static service.
+**Result:** FAILED — "static sites cannot have a region". Fix: removed `region` from pixelpress-web.
+
+---
+
+**What:** Build iteration 2 — static site `plan` rejected.
+**Why:** render.yaml set `plan: free` on the static service.
+**Result:** FAILED — "no such plan free for service type web". Static sites are inherently free and take no plan. Fix: removed `plan` from pixelpress-web.
+
+---
+
+**What:** Build iteration 3 — pnpm install on Render base image.
+**Why:** Original buildCommand used `npm install -g pnpm`.
+**Result:** FAILED — EROFS, read-only `/usr/lib/node_modules`. Tried `corepack enable` next: ALSO failed — read-only `/usr/bin/pnpm` shim. Fix: use `corepack prepare pnpm@10.8.1 --activate` ONLY (writes to the writable cache; the `/usr/bin/pnpm` shim already exists). Added `COREPACK_ENABLE_DOWNLOAD_PROMPT=0` env var and `packageManager: "pnpm@10.8.1"` in `src/package.json` (lockfileVersion 9.0).
+
+---
+
+**What:** Build iteration 4 — static site rootDir / publish path.
+**Why:** Static build needs the workspace root for pnpm to resolve, but publish path must point at the built SPA.
+**Result:** FIXED to FINAL working config: `rootDir: src` (workspace root), build `corepack prepare pnpm@10.8.1 --activate && pnpm install --frozen-lockfile && pnpm --filter pixelpress-frontend run build`, `staticPublishPath: web/dist`.
+
+---
+
+**What:** Final deploy — both services LIVE on commit `fe7ed76`.
+**Why:** All 4 build blockers resolved; render.yaml converged.
+**Result:** SUCCESS.
+
+| # | Service | Service ID | URL | State |
+|---|---------|-----------|-----|-------|
+| 1 | pixelpress-api | srv-d8llrhog4nts73fhc6n0 | https://pixelpress-api.onrender.com | LIVE — Nest started, DB pushed + seeded on boot. Health `GET /api/v1/games` → 200. Swagger at `/api/docs`. CORS verified (`vary: Origin` + `access-control-allow-credentials`). |
+| 2 | pixelpress-web | srv-d8llrhog4nts73fhc6mg | https://pixelpress-web.onrender.com | LIVE — SPA renders, rewrite rule works. |
+
+Secrets: `JWT_SECRET` set, `RAWG_API_KEY` set (but `USE_RAWG_MOCK=true` default still in effect → RAWG mock data served).

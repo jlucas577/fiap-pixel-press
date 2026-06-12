@@ -62,7 +62,7 @@ Monitor build logs in real time via Dashboard > pixelpress-api > Logs.
 
 ### Expected build sequence for pixelpress-api:
 ```
-npm install -g pnpm
+corepack prepare pnpm@10.8.1 --activate   # NOT npm i -g pnpm (read-only /usr/lib) nor corepack enable (read-only /usr/bin)
 pnpm install --frozen-lockfile
 pnpm --filter pixelpress-backend exec prisma generate
 pnpm --filter pixelpress-backend run build
@@ -134,8 +134,8 @@ curl -s -X POST https://pixelpress-api.onrender.com/api/v1/auth/login \
 |---|-----|-------|
 | 1 | `app_url` (API) | `https://pixelpress-api.onrender.com` |
 | 2 | `app_url` (Web) | `https://pixelpress-web.onrender.com` |
-| 3 | `service_id` (API) | Retrieved from Dashboard after deploy |
-| 4 | `service_id` (Web) | Retrieved from Dashboard after deploy |
+| 3 | `service_id` (API) | `srv-d8llrhog4nts73fhc6n0` |
+| 4 | `service_id` (Web) | `srv-d8llrhog4nts73fhc6mg` |
 
 ---
 
