@@ -90,7 +90,6 @@ services:
   - type: web
     name: pixelpress-web
     runtime: static
-    plan: free
 
     rootDir: src/web
 
