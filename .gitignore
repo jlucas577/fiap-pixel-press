@@ -1,0 +1,25 @@
+# dependencies (any package in the workspace)
+node_modules/
+
+# build output
+dist/
+dist-ssr/
+*.tsbuildinfo
+.vite/
+
+# env
+.env
+*.local
+
+# SQLite (efêmero, recriado via db:reset / boot)
+*.db
+*.db-journal
+
+# logs
+*.log
+
+# OS
+.DS_Store
+
+# workflow/session junk
+.wf/

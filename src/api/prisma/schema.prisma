@@ -1,0 +1,90 @@
+// PixelPress — schema Prisma (MVP)
+// Desvio consciente do .ai/: provider = "sqlite" (em vez de postgresql) para demo sem Docker.
+// SQLite não suporta enum: Papel e StatusBiblioteca são String aqui; o enum TypeScript
+// (src/common/enums) é a fonte de verdade, validado com @IsEnum nos DTOs.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Usuario {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  nome      String
+  senhaHash String
+  papel     String   @default("USUARIO") // enum TS Papel: USUARIO | MODERADOR | ADMIN
+  ativo     Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  itensBiblioteca ItemBiblioteca[]
+  reviews         Review[]
+  denuncias       Denuncia[]       @relation("DenunciasFeitas")
+  ocultacoes      Review[]         @relation("ReviewsOcultadas")
+}
+
+model Jogo {
+  id        String   @id @default(uuid())
+  rawgId    Int      @unique
+  slug      String   @unique
+  nome      String
+  capaUrl   String?
+  createdAt DateTime @default(now())
+
+  itensBiblioteca ItemBiblioteca[]
+  reviews         Review[]
+}
+
+model ItemBiblioteca {
+  id           String   @id @default(uuid())
+  status       String // enum TS StatusBiblioteca
+  horasJogadas Int      @default(0)
+  usuarioId    String
+  jogoId       String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  usuario Usuario @relation(fields: [usuarioId], references: [id], onDelete: Cascade)
+  jogo    Jogo    @relation(fields: [jogoId], references: [id], onDelete: Cascade)
+
+  @@unique([usuarioId, jogoId])
+}
+
+model Review {
+  id              String   @id @default(uuid())
+  nota            Int // 0..10 (validado no DTO/service)
+  texto           String?
+  spoiler         Boolean  @default(false)
+  oculto          Boolean  @default(false)
+  motivoOcultacao String?
+  ocultadoPorId   String?
+  usuarioId       String
+  jogoId          String
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  usuario     Usuario    @relation(fields: [usuarioId], references: [id], onDelete: Cascade)
+  jogo        Jogo       @relation(fields: [jogoId], references: [id], onDelete: Cascade)
+  ocultadoPor Usuario?   @relation("ReviewsOcultadas", fields: [ocultadoPorId], references: [id])
+  denuncias   Denuncia[]
+
+  @@unique([usuarioId, jogoId])
+}
+
+model Denuncia {
+  id            String   @id @default(uuid())
+  motivo        String
+  status        String   @default("PENDENTE") // PENDENTE | RESOLVIDA
+  reviewId      String
+  denuncianteId String
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  review      Review  @relation(fields: [reviewId], references: [id], onDelete: Cascade)
+  denunciante Usuario @relation("DenunciasFeitas", fields: [denuncianteId], references: [id], onDelete: Cascade)
+}

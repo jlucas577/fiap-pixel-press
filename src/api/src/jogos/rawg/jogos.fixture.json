@@ -1,0 +1,182 @@
+[
+  {
+    "rawgId": 3328,
+    "slug": "the-witcher-3-wild-hunt",
+    "nome": "The Witcher 3: Wild Hunt",
+    "capaUrl": "https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg",
+    "descricao": "RPG de mundo aberto ambientado num universo de fantasia sombria, seguindo o caçador de monstros Geralt de Rívia.",
+    "lancamento": "2015-05-18",
+    "metacritic": 92,
+    "rating": 4.66,
+    "generos": ["Action", "RPG"],
+    "plataformas": ["PC", "PlayStation 4", "Xbox One", "Nintendo Switch"],
+    "screenshots": [
+      "https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg"
+    ]
+  },
+  {
+    "rawgId": 3498,
+    "slug": "grand-theft-auto-v",
+    "nome": "Grand Theft Auto V",
+    "capaUrl": "https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg",
+    "descricao": "Mundo aberto de ação e crime em Los Santos, alternando entre três protagonistas.",
+    "lancamento": "2013-09-17",
+    "metacritic": 92,
+    "rating": 4.47,
+    "generos": ["Action"],
+    "plataformas": ["PC", "PlayStation 5", "Xbox Series S/X"],
+    "screenshots": [
+      "https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg"
+    ]
+  },
+  {
+    "rawgId": 4200,
+    "slug": "portal-2",
+    "nome": "Portal 2",
+    "capaUrl": "https://media.rawg.io/media/games/2ba/2bac0e87cf45e5b508f227d281c9252a.jpg",
+    "descricao": "Sequência do aclamado quebra-cabeças baseado em portais, com humor e física inteligente.",
+    "lancamento": "2011-04-19",
+    "metacritic": 95,
+    "rating": 4.61,
+    "generos": ["Shooter", "Puzzle"],
+    "plataformas": ["PC", "PlayStation 3", "Xbox 360"],
+    "screenshots": [
+      "https://media.rawg.io/media/games/2ba/2bac0e87cf45e5b508f227d281c9252a.jpg"
+    ]
+  },
+  {
+    "rawgId": 4291,
+    "slug": "counter-strike-global-offensive",
+    "nome": "Counter-Strike: Global Offensive",
+    "capaUrl": "https://media.rawg.io/media/games/736/73619bd336c894d6941d926bfd563946.jpg",
+    "descricao": "FPS tático competitivo por equipes, referência do gênero há mais de uma década.",
+    "lancamento": "2012-08-21",
+    "metacritic": 81,
+    "rating": 3.57,
+    "generos": ["Shooter"],
+    "plataformas": ["PC", "PlayStation 3", "Xbox 360"],
+    "screenshots": [
+      "https://media.rawg.io/media/games/736/73619bd336c894d6941d926bfd563946.jpg"
+    ]
+  },
+  {
+    "rawgId": 5286,
+    "slug": "tomb-raider",
+    "nome": "Tomb Raider (2013)",
+    "capaUrl": "https://media.rawg.io/media/games/021/021c4e21a1824d2526f925eff6324653.jpg",
+    "descricao": "Reboot que mostra a origem de Lara Croft numa ilha hostil cheia de mistérios.",
+    "lancamento": "2013-03-05",
+    "metacritic": 86,
+    "rating": 4.05,
+    "generos": ["Action", "Adventure"],
+    "plataformas": ["PC", "PlayStation 4", "Xbox One"],
+    "screenshots": [
+      "https://media.rawg.io/media/games/021/021c4e21a1824d2526f925eff6324653.jpg"
+    ]
+  },
+  {
+    "rawgId": 13536,
+    "slug": "portal",
+    "nome": "Portal",
+    "capaUrl": "https://media.rawg.io/media/games/7fa/7fa0b586293c5861ee32490e953a4996.jpg",
+    "descricao": "O quebra-cabeças que inventou a mecânica de portais, curto e genial.",
+    "lancamento": "2007-10-09",
+    "metacritic": 90,
+    "rating": 4.51,
+    "generos": ["Shooter", "Puzzle"],
+    "plataformas": ["PC", "PlayStation 3", "Xbox 360"],
+    "screenshots": [
+      "https://media.rawg.io/media/games/7fa/7fa0b586293c5861ee32490e953a4996.jpg"
+    ]
+  },
+  {
+    "rawgId": 12020,
+    "slug": "left-4-dead-2",
+    "nome": "Left 4 Dead 2",
+    "capaUrl": "https://media.rawg.io/media/games/d58/d588947d4286e7b5e0e12e1bea7d9844.jpg",
+    "descricao": "Cooperativo frenético de sobrevivência contra hordas de zumbis.",
+    "lancamento": "2009-11-17",
+    "metacritic": 89,
+    "rating": 4.09,
+    "generos": ["Action", "Shooter"],
+    "plataformas": ["PC", "Xbox 360"],
+    "screenshots": [
+      "https://media.rawg.io/media/games/d58/d588947d4286e7b5e0e12e1bea7d9844.jpg"
+    ]
+  },
+  {
+    "rawgId": 802,
+    "slug": "borderlands-2",
+    "nome": "Borderlands 2",
+    "capaUrl": "https://media.rawg.io/media/games/49c/49c3dfa4ce2f6f140cc4825868e858cb.jpg",
+    "descricao": "Looter-shooter com humor ácido, cooperativo e milhões de armas.",
+    "lancamento": "2012-09-18",
+    "metacritic": 89,
+    "rating": 4.02,
+    "generos": ["Action", "Shooter", "RPG"],
+    "plataformas": ["PC", "PlayStation 3", "Xbox 360"],
+    "screenshots": [
+      "https://media.rawg.io/media/games/49c/49c3dfa4ce2f6f140cc4825868e858cb.jpg"
+    ]
+  },
+  {
+    "rawgId": 58175,
+    "slug": "god-of-war",
+    "nome": "God of War (2018)",
+    "capaUrl": "https://media.rawg.io/media/games/4be/4be6a6ad0364751a96229c56bf69be59.jpg",
+    "descricao": "Kratos e seu filho Atreus numa jornada pela mitologia nórdica.",
+    "lancamento": "2018-04-20",
+    "metacritic": 94,
+    "rating": 4.57,
+    "generos": ["Action", "Adventure", "RPG"],
+    "plataformas": ["PC", "PlayStation 4", "PlayStation 5"],
+    "screenshots": [
+      "https://media.rawg.io/media/games/4be/4be6a6ad0364751a96229c56bf69be59.jpg"
+    ]
+  },
+  {
+    "rawgId": 41494,
+    "slug": "cyberpunk-2077",
+    "nome": "Cyberpunk 2077",
+    "capaUrl": "https://media.rawg.io/media/games/26d/26d4437715bee60138dab4a7c8c59c92.jpg",
+    "descricao": "RPG de mundo aberto em Night City, futuro distópico repleto de implantes cibernéticos.",
+    "lancamento": "2020-12-10",
+    "metacritic": 75,
+    "rating": 4.13,
+    "generos": ["Action", "RPG"],
+    "plataformas": ["PC", "PlayStation 5", "Xbox Series S/X"],
+    "screenshots": [
+      "https://media.rawg.io/media/games/26d/26d4437715bee60138dab4a7c8c59c92.jpg"
+    ]
+  },
+  {
+    "rawgId": 5679,
+    "slug": "the-elder-scrolls-v-skyrim",
+    "nome": "The Elder Scrolls V: Skyrim",
+    "capaUrl": "https://media.rawg.io/media/games/7cf/7cfc9220b401b7a300e409e539c9afd5.jpg",
+    "descricao": "RPG de fantasia em mundo aberto onde você é o Dragonborn de Tamriel.",
+    "lancamento": "2011-11-11",
+    "metacritic": 94,
+    "rating": 4.42,
+    "generos": ["Action", "RPG"],
+    "plataformas": ["PC", "PlayStation 3", "Xbox 360"],
+    "screenshots": [
+      "https://media.rawg.io/media/games/7cf/7cfc9220b401b7a300e409e539c9afd5.jpg"
+    ]
+  },
+  {
+    "rawgId": 28,
+    "slug": "red-dead-redemption-2",
+    "nome": "Red Dead Redemption 2",
+    "capaUrl": "https://media.rawg.io/media/games/511/5118aff5091cb3efec399c808f8c598f.jpg",
+    "descricao": "Épico de faroeste em mundo aberto seguindo Arthur Morgan e a gangue Van der Linde.",
+    "lancamento": "2018-10-26",
+    "metacritic": 96,
+    "rating": 4.59,
+    "generos": ["Action", "Adventure"],
+    "plataformas": ["PC", "PlayStation 4", "Xbox One"],
+    "screenshots": [
+      "https://media.rawg.io/media/games/511/5118aff5091cb3efec399c808f8c598f.jpg"
+    ]
+  }
+]
