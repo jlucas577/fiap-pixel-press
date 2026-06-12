@@ -81,10 +81,10 @@ services:
       - key: RAWG_CACHE_TTL_SECONDS
         value: "300"
 
-      # Set to "true" to use local fixture data instead of hitting the real RAWG API.
-      # Useful for demos with no RAWG key. Change to "false" once RAWG_API_KEY is set.
+      # "false" = hit the real RAWG API (requires a valid RAWG_API_KEY secret).
+      # Flip to "true" to fall back to local fixture data if no key is available.
       - key: USE_RAWG_MOCK
-        value: "true"
+        value: "false"
 
       # CORS: allow requests from the static site. Update if the frontend URL changes.
       - key: CORS_ORIGIN
